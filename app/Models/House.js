@@ -34,25 +34,25 @@ export class House {
 
   static HouseForm() {
     return /*html*/`
-    <form onsubmit="app.carsController.handleFormSubmit()">
+    <form onsubmit="app.housesController.handleHouseFormSubmit()">
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" name="address" required minlength="3" maxlength="100">
-          <label for="address">Make</label>
+          <label for="address">address</label>
         </div>
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" name="sqrFt" required>
-          <label for="sqrFt">Model</label>
+          <label for="sqrFt">sqrFt</label>
         </div>
 
         <div class="form-floating mb-3">
           <input type="number" class="form-control" name="bed" required>
-          <label for="bed">Year</label>
+          <label for="bed">bed</label>
         </div>
         <div class="form-floating mb-3">
           <input type="number" class="form-control" name="bath" required>
-          <label for="bath">Year</label>
+          <label for="bath">bath</label>
         </div>
 
         <div class="form-floating mb-3">

@@ -3,6 +3,7 @@ import { House } from "../Models/House.js"
 import { housesService } from "../Services/HousesService.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML, setText } from "../Utils/Writer.js"
+import { getFormData } from "../Utils/FormHandler.js"
 
 
 function _drawHouses() {
@@ -23,6 +24,7 @@ export class HousesController {
     this.show()
     appState.on('houses', _drawHouses)
     appState.on('house', _drawHouse)
+
   }
 
   show() {
@@ -40,7 +42,7 @@ export class HousesController {
     }
   }
 
-  handleFormSubmit() {
+  handleHouseFormSubmit() {
     try {
       event.preventDefault()
       const form = event.target
@@ -51,6 +53,7 @@ export class HousesController {
 
     } catch (error) {
       Pop.error(error)
+      console.error(error)
     }
   }
 
