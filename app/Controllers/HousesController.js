@@ -13,8 +13,8 @@ function _drawHouses() {
 }
 
 function _drawHouse() {
-    let alias = `${appState.house.address} ${appState.house.pic} ${appState.house.price}`
-    setText('listingModalLabel', alias)
+    // let alias = `${appState.house.address} ${appState.house.pic} ${appState.house.price}`
+    setText('listingModalLabel', appState.house.address)
     setHTML('listing-modal-body', appState.house.HouseDetailsTemplate)
 }
 

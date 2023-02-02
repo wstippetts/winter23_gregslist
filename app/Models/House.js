@@ -2,6 +2,7 @@
 
 export class House {
     constructor(data) {
+        console.log(data)
         this.address = data.address
         this.sqrFt = data.sqrFt
         this.bed = data.bed
@@ -25,11 +26,15 @@ export class House {
 
     get HouseDetailsTemplate() {
         return /*html*/`
-            <div>
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="app.housesController.deleteHouse('${this.address}')">DELETE THE HOUSE</button>
-            </div>
+            <img
+                src="${this.pic}"
+                alt="${this.address}" class="rounded imgCard">
+                <p><b>${this.address} - $${this.price} </b></p>    
             <div>
                 <p>"${this.desc}"</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="app.housesController.deleteHouse('${this.address}')">DELETE THE HOUSE</button>
             </div>
     `
     }
