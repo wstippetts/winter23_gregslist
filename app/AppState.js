@@ -1,10 +1,10 @@
 import { Car } from "./Models/Car.js"
 import { House } from "./Models/House.js"
-import { Value } from "./Models/Value.js"
+import { Job } from "./Models/Job.js"
+// import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 import { loadState } from "./Utils/Store.js"
-import { Job } from "./Models/Job.js"
 
 
 class AppState extends EventEmitter {

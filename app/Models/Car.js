@@ -3,6 +3,7 @@ import { generateId } from "../Utils/generateId.js"
 export class Car {
 
   constructor(data) {
+    console.log(data)
     this.id = data.id || generateId() // you only need this this week
     this.make = data.make
     this.model = data.model
@@ -26,7 +27,7 @@ export class Car {
   }
 
 
-  get CarDetailsTemplate(){
+  get CarDetailsTemplate() {
     return /*html*/`
       <div>
         <button class="btn btn-danger" data-bs-dismiss="modal" onclick="app.carsController.deleteCar('${this.id}')">DELETE THE CAR!!!!!</button>
