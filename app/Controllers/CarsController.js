@@ -26,9 +26,20 @@ export class CarsController {
 
   constructor() {
     this.show()
+
     // SETUP LISTENERS
     appState.on('cars', _drawCars)
     appState.on('car', _drawCar)
+  }
+
+  async getCars() {
+    try {
+      await carsService.getCars()
+    } catch (error) {
+      Pop.error(error.message)
+      console.error(error)
+
+    }
   }
 
   show() {

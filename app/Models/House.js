@@ -2,14 +2,14 @@
 
 export class House {
     constructor(data) {
-        console.log(data)
-        this.address = data.address
-        this.sqrFt = data.sqrFt
-        this.bed = data.bed
-        this.bath = data.bath
-        this.pic = data.pic
+        this.id = data.id || ''
+        this.bedrooms = data.bedrooms
+        this.bathrooms = data.bathrooms
+        this.levels = data.levels
+        this.pic = data.imgUrl
+        this.year = data.year
         this.price = data.price
-        this.desc = data.desc
+        this.description = data.description
     }
     get HouseCardTemplate() {
         return /*html*/`

@@ -3,14 +3,14 @@ import { generateId } from "../Utils/generateId.js"
 export class Car {
 
   constructor(data) {
-    console.log(data)
-    this.id = data.id || generateId() // you only need this this week
+    this.id = data.id || ''
+    this.createdAt = data.createdAt
+    this.description = data.description
+    this.img = data.imgUrl
     this.make = data.make
     this.model = data.model
-    this.year = data.year
     this.price = data.price
-    this.imgUrl = data.imgUrl
-    this.description = data.description
+    this.year = data.year
   }
 
   get CarCardTemplate() {

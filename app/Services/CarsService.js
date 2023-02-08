@@ -1,18 +1,22 @@
 import { appState } from "../AppState.js"
 import { Car } from "../Models/Car.js"
 import { saveState } from "../Utils/Store.js"
+import { sandboxApi } from "./AxiosService.js"
 
 class CarsService {
-  deleteCar(carId) {
+  async deleteCar(carId) {
     let carIndex = appState.cars.findIndex(c => c.id == carId)
 
     if (carIndex == -1) {
       throw new Error('Yo, thats a bad car id....')
     }
 
+    // saveState('cars', appState.cars)
+    const res = await sandboxApi.delete('/cars/' + carId)
     appState.cars.splice(carIndex, 1)
-    saveState('cars', appState.cars)
     appState.emit('cars') // shine the light 🕯️🔦💡
+
+
 
   }
 
@@ -33,6 +37,13 @@ class CarsService {
     appState.emit('cars')
     saveState('cars', appState.cars)
 
+  }
+
+  async getCars() {
+    const response = await sandboxApi.get('/cars')
+    const newArray = response.data.map(car => new Car(car))
+    appState.cars = newArray
+    console.log(appState.cars);
   }
 }
 
